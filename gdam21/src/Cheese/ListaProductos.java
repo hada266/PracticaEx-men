@@ -79,7 +79,7 @@ public class ListaProductos {
         if (listaP.containsKey(prod.getcode())) {
            return null;
         }else if (parametro_vacio(prod.getcode())) {
-        	return prod;
+        	return null;
         }
         
         listaP.put(prod.getcode(), prod);
@@ -90,7 +90,7 @@ public class ListaProductos {
     /**
      * En este metodo descartamos el producto, si el producto es distinto de null lo removemos de la lista
      * @param codigo recibe como parametro el codigo del producto
-     * @return devuelve el producto
+     * @return devuelve el producto  
      */
     public Producto descartaProducto(String codigo) { 
         
