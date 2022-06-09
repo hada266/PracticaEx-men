@@ -1,8 +1,8 @@
 /*
-*	grupo  :
-*	alumno :
-*	n.exp. :
-*	fecha  :
+*	grupo  :1GDAM TARDE
+*	alumno :HADASA CARMEN TARLE
+*	n.exp. :7261
+*	fecha  :09/06/2022
  */
 package Cheese;
 
