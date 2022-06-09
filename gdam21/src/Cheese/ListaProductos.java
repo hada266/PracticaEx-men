@@ -75,10 +75,13 @@ public class ListaProductos {
      * @return prod devolvera un producto
      */
     public Producto registraProducto(Producto prod) {
-        
+    	
         if (listaP.containsKey(prod.getcode())) {
            return null;
+        }else if (parametro_vacio(prod.getcode())) {
+        	return null;
         }
+        
         listaP.put(prod.getcode(), prod);
         n++;
         this.setNumProductos(n);
@@ -87,11 +90,12 @@ public class ListaProductos {
     /**
      * En este metodo descartamos el producto, si el producto es distinto de null lo removemos de la lista
      * @param codigo recibe como parametro el codigo del producto
-     * @return devuelve el producto
+     * @return devuelve el producto  
      */
     public Producto descartaProducto(String codigo) { 
         
         Producto prod = encuentraProducto(codigo);
+        if (codigo != "") return null;
         if (prod != null) {
 	        listaP.remove(codigo);
 	        n--;
@@ -106,7 +110,7 @@ public class ListaProductos {
      */
     public Producto encuentraProducto(String codigo) { 
         Producto prod = null;
-        
+        if (codigo != "") return null;
         if (!listaP.containsKey(codigo)) {
             return prod;
         }
