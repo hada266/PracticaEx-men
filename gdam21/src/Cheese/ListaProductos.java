@@ -49,7 +49,11 @@ public class ListaProductos {
     
         if ((campo.replace(" ","").isEmpty()) || (campo == null))  return true; else return false;
     }
-
+    /**
+     * Este método crea una lista de productos
+     * @param nombre recibe como párametro un nombre
+     *  
+     */
     public ListaProductos(String nombre) {
     	if (parametro_vacio(nombre)) {
     		this.nombreLista = "noNamed";
@@ -58,10 +62,18 @@ public class ListaProductos {
     	this.nombreLista = nombre;
     	}
     }
+    /**
+     * Con este método conseguiremos el total de productos que tenemos
+     * @return getNumProductos() devolverá el numero de productos que hay en la lista
+     */
     public int totalProductos(){
             return this.getNumProductos();
     }
-        
+    /**
+     * Mediante este método registraremos los productos    
+     * @param prod recibe un producto como parametro
+     * @return prod devolvera un producto
+     */
     public Producto registraProducto(Producto prod) {
         
         if (listaP.containsKey(prod.getcode())) {
@@ -72,7 +84,11 @@ public class ListaProductos {
         this.setNumProductos(n);
         return prod;
     }
-
+    /**
+     * En este metodo descartamos el producto, si el producto es distinto de null lo removemos de la lista
+     * @param codigo recibe como parametro el codigo del producto
+     * @return devuelve el producto
+     */
     public Producto descartaProducto(String codigo) { 
         
         Producto prod = encuentraProducto(codigo);
@@ -83,7 +99,11 @@ public class ListaProductos {
         }
         return prod;
     }
-
+    /**
+     * Mediante el codigo encontramos el producto  
+     * @param codigo recibe como parametro el codigo del producto
+     * @return prod o buscar el codigo en la lista 
+     */
     public Producto encuentraProducto(String codigo) { 
         Producto prod = null;
         
